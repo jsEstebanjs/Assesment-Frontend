@@ -12,7 +12,7 @@ const params = useParams()
 
     useEffect(()=>{
         dispatch(PostLoading(true))
-        axios.get(`https://fakestoreapi.com/products/${params.productId}`)
+        axios.get(`${process.env.REACT_APP_API}/${params.productId}`)
             .then((res) => {
                 dispatch(PostSucces(res.data))
             })

@@ -5,7 +5,7 @@ import { PostLoading, PostSucces, PostError} from '../store/reducers/CardsHome.S
 export const getCards = () => {
   return (dispatch) => {
     dispatch(PostLoading(true))
-    axios.get("https://fakestoreapi.com/products")
+    axios.get(process.env.REACT_APP_API)
         .then((res) => {
             dispatch(PostSucces(res.data))
         })
